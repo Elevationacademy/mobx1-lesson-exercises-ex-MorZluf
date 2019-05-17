@@ -13,11 +13,14 @@ export class ShoppingList {
     @action addItem = (name) => {
         this.list.push(new Item (name))
     }
-    editItem = () => {
-        // your code here
+    @action editItem = (name) => {
+        let item = this.list.find(i => i.name === name)
+        item.location = prompt("Enter location")
+        
     }
-    deleteItem = () => {
-        // your code here
+    @action deleteItem = (name) => {
+        let item = this.list.find(i => i.name === name)
+        this.list.splice(0 , 1)
     } 
 }
 
