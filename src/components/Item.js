@@ -16,7 +16,7 @@ class Item extends Component {
       let item = this.props.item
         return (
             <div className = {item.completed ? "crossed" : null}>
-            <input type="checkBox" onClick={this.checkItem} value={item.name}/> {item.name} 
+            <input type="checkBox" onClick={this.checkItem} value={item.name}/> {item.name} {item.location} 
             
       {/*   your code here
             each item should be in an input checkbox
