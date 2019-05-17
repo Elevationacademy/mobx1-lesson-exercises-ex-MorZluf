@@ -3,8 +3,8 @@ import { observer } from 'mobx-react'
 
 @observer
 class Item extends Component {
-    checkItem = () => {
-        //your code here
+    checkItem = (e) => {
+        this.props.store.checkItem(e.target.value)
       }
       editItem = () => {
         //your code here
@@ -16,7 +16,7 @@ class Item extends Component {
       let item = this.props.item
         return (
             <div className = {item.completed ? "crossed" : null}>
-            <input type="checkBox" value={item.name}/> {item.name} 
+            <input type="checkBox" onClick={this.checkItem} value={item.name}/> {item.name} 
             
       {/*   your code here
             each item should be in an input checkbox
